@@ -10,7 +10,7 @@ const stopBtn = document.querySelector('button[data-stop]');
 console.log(stopBtn.dataset);
 
 startBtn.addEventListener('click', () => {
-  timerId = setInterval(event => {
+  timerId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
 });

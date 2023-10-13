@@ -7,7 +7,7 @@ const daysEl = document.querySelector('[data-days]');
 const hoursEl = document.querySelector('[data-hours]');
 const minutesEl = document.querySelector('[data-minutes]');
 const secondsEl = document.querySelector('[data-seconds]');
-
+let countdownIntervalId;
 flatpickr(inputEl, {
   enableTime: true,
   dateFormat: 'Y-m-d H:i',
@@ -26,10 +26,9 @@ flatpickr(inputEl, {
 
 startBtn.disabled = true;
 
-let countdownIntervalId;
-
 startBtn.addEventListener('click', () => {
   const endDate = flatpickr.parseDate(inputEl.value, 'Y-m-d H:i');
+  clearInterval(countdownIntervalId);
   startBtn.disabled = true;
   countdownIntervalId = setInterval(() => {
     const timeLeft = endDate - new Date();

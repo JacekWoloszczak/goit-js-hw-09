@@ -5,10 +5,10 @@ const body = document.querySelector('body');
 console.log(body);
 const startBtn = document.querySelector('button[data-start]');
 console.log(startBtn);
-startBtn.style.backgroundColor = getRandomHexColor;
+
 const stopBtn = document.querySelector('button[data-stop]');
 console.log(stopBtn.dataset);
-
+let timerId;
 startBtn.addEventListener('click', () => {
   timerId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
